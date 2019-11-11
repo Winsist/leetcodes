@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var reverse = function (x) {
+            let min = -(1 << 30) * 2;
+            let max = (1 << 30) * 2 - 1;
+            let num = Math.abs(x);
+            num = num.toString();
+            let arr = num.split('');  
+            let str = '';
+            for (let i = 0,len=arr.length; i < len; i++) {
+                str += arr.pop();
+            }
+            newNum = Number(str);
+            newNum = x > 0 ? newNum : -newNum;
+            if (newNum <min || newNum>max) {
+                return 0
+            } else {
+                return newNum;
+            }
+        };
+
+        reverse(120)
+
+    </script>
+</body>
+
+</html>

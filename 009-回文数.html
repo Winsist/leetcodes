@@ -28,18 +28,38 @@
         你能不将整数转为字符串来解决这个问题吗？
         */
 
-        function huiwen(n){
-            n=n.toString(); 
-            var arr=n.split('');
-            for(var i=0;i<arr.length/2;i++){
-                if(arr[i]!==arr[arr.length-(i+1)]){
-                    return false;
-                }
+        function huiwen(x){
+            // n=n.toString(); 
+            // var arr=n.split('');
+            // for(var i=0;i<arr.length/2;i++){
+            //     if(arr[i]!==arr[arr.length-(i+1)]){
+            //         return false;
+            //     }
+            // }
+            // return true;
+
+            if(x<0){
+                return false;
             }
-            return true;
+            let result = 0;
+            
+            while(x>0){
+                let m = n % 10;
+                result = result * 10 + m;
+                let n = Math.floor(n/10);
+            }
+
+            
+            return n==result
+            
+            
+
+
         }
-        var result=huiwen(125);
-        console.log(result);
+
+
+        var result2=huiwen(323);
+        console.log(result2);
         
         /*
         reverse 方法颠倒数组中元素的位置，并返回该数组的引用。该方法会改变原数组。
